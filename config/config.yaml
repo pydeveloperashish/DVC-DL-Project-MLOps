@@ -10,9 +10,9 @@ artifacts:
   Callbacks_dir: callbacks
 
 source_download_dirs:
-  - /outside_data/dog
-  - /outside_data/cat
+  - outside_data/Dog
+  - outside_data/Cat
 
 local_data_dirs:
-  - data/dog
-  - data/cat
+  - data/Dog
+  - data/Cat
