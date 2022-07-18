@@ -1,0 +1,12 @@
+config/secrets.yaml
+.idea/
+.vscode/
+conda_env.txt
+
+# Environments
+.env
+env/
+venv/
+ENV/
+env.bak
+venv.bak/
