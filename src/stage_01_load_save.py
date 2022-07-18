@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 logging_str = "[%(asctime)s:  %(levelname)s: %(module)s]:  %(message)s"
 log_dir = "logs"
-create_directory([log_dir])
+os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(filename = os.path.join(log_dir, "running_logs.log"),
                                             level = logging.INFO,
                                             format = logging_str, 
@@ -29,9 +29,9 @@ if __name__ == "__main__":
     args.add_argument("--config", "-c", default = "config/config.yaml")
     parsed_args = args.parse_args()
     try:
-        logging.info("Stage one started")
+        logging.info(">>>>> Stage one started")
         get_data(config_path = parsed_args.config)
-        logging.info("Stage one completed all the data are saved in local")
+        logging.info("Stage one completed all the data are saved in local >>>>>")
     except Exception as e:
         logging.exception(e)
         raise e
