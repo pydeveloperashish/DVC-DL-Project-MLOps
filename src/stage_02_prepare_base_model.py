@@ -3,8 +3,8 @@ import argparse
 import os
 from pprint import pprint
 import logging
-from tqdm import tqdm
-from src.utils.models import get_VGG16_model
+from src.utils.models import get_VGG16_model, prepare_model
+import io
 
 logging_str = "[%(asctime)s:  %(levelname)s: %(module)s]:  %(message)s"
 log_dir = "logs"
@@ -32,6 +32,31 @@ def prepare_base_model(config_path, params_path):
     base_model_path = os.path.join(base_model_dir_path, base_model_name)
     
     model = get_VGG16_model(input_shape = params['IMAGE_SIZE'], model_path = base_model_path)
+
+    full_model = prepare_model(
+        model,
+        CLASSES = params['CLASSES'],
+        freeze_all = False,
+        freeze_till = 2,
+        learning_rate = params['LEARNING_RATE']
+    )
+    
+    updated_base_model_path = os.path.join(
+        base_model_dir_path,
+        artifacts["Updated_Base_model_name"]
+    )
+
+    def _log_model_summary(full_model):
+        with io.StringIO() as stream:
+            full_model.summary(print_fn = lambda x: stream.write(f"{x}\n"))
+            summary_str = stream.getvalue()
+        return summary_str
+            
+    logging.info(f" full model summary: \n{_log_model_summary(full_model)}")
+    
+    full_model.save(updated_base_model_path)
+    
+    
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
