@@ -9,4 +9,5 @@ tqdm
 PyYAML
 boto3    ## for aws
 joblib
+scipy
 
