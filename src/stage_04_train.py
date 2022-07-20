@@ -1,6 +1,6 @@
 from src.utils.all_utils import create_directory, read_yaml, copy_file
-from src.utils.models import get_VGG16_model
-
+from src.utils.models import load_full_model
+from src.utils.callbacks import get_callbacks
 import argparse
 import os
 from pprint import pprint
@@ -21,9 +21,20 @@ def train_model(config_path, params_path):
     
     artifacts = config['artifacts']
     artifacts_dir = artifacts['Artifacts_dir']
-                           
-                        
     
+    train_model_dir_path = os.path.join(artifacts_dir, artifacts['Trained_Model_Dir'])
+    create_directory([train_model_dir_path])
+    
+    untrained_full_model_path = os.path.join(artifacts_dir,
+                artifacts['Base_model_dir'], artifacts['Updated_Base_model_name'])       
+                
+    model = load_full_model(untrained_full_model_path)
+    
+    callback_dir_path = os.path.join(artifacts_dir, artifacts['Callbacks_dir'])
+    callbacks = get_callbacks(callback_dir_path)                                         
+    
+    
+                        
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", "-c", default = "config/config.yaml")
@@ -31,11 +42,11 @@ if __name__ == "__main__":
     parsed_args = args.parse_args()
     
     try:
-        logging.info(">>>>> Stage fout started")
+        logging.info(">>>>> Stage four started")
         train_model(config_path = parsed_args.config, 
                            params_path = parsed_args.params)
         
-        logging.info("Stage four completed: training completed and model is saved >>>>>")
+        logging.info("Stage four completed: training completed and model is saved >>>>>\n\n")
     except Exception as e:
         logging.exception(e)
         raise e

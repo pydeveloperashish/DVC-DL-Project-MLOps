@@ -781,3 +781,68 @@ TypeError: __init__() missing 1 required positional argument: 'filepath'
 [2022-07-20 16:06:38,252:  INFO: callbacks]:  tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
 [2022-07-20 16:06:38,260:  INFO: callbacks]:  model checkpoint is being saved at artifacts/callbacks/checkpoint_cb.cb
 [2022-07-20 16:06:38,261:  INFO: stage_03_prepare_callbacks]:  Stage three completed: Callbacks are preared and saved as binary >>>>>
+[2022-07-20 17:12:42,276:  INFO: stage_04_train]:  >>>>> Stage fout started
+[2022-07-20 17:12:42,281:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 17:12:42,284:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 17:12:42,284:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 17:12:45,077:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 17:12:45,078:  INFO: models]:  Model loaded successfully
+[2022-07-20 17:12:45,078:  ERROR: stage_04_train]:  name 'get_callbacks' is not defined
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 50, in <module>
+    params_path = parsed_args.params)
+  File "src/stage_04_train.py", line 36, in train_model
+    callbacks = get_callbacks(callback_dir_path)
+NameError: name 'get_callbacks' is not defined
+[2022-07-20 17:13:29,299:  INFO: stage_04_train]:  >>>>> Stage fout started
+[2022-07-20 17:13:29,303:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 17:13:29,304:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 17:13:29,305:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 17:13:30,302:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 17:13:30,303:  INFO: models]:  Model loaded successfully
+[2022-07-20 17:13:30,303:  ERROR: stage_04_train]:  name 'model' is not defined
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 48, in <module>
+    params_path = parsed_args.params)
+  File "src/stage_04_train.py", line 34, in train_model
+    callbacks = get_callbacks(callback_dir_path)
+  File "/media/dev_ashish/DATA/Python37/INeuron-Classes/ML-OPS-Classes/DVC-Classes/DVC-DL-Project/src/utils/callbacks.py", line 37, in get_callbacks
+    joblib.load(model) for path in callback_path
+  File "/media/dev_ashish/DATA/Python37/INeuron-Classes/ML-OPS-Classes/DVC-Classes/DVC-DL-Project/src/utils/callbacks.py", line 37, in <listcomp>
+    joblib.load(model) for path in callback_path
+NameError: name 'model' is not defined
+[2022-07-20 17:15:18,352:  INFO: stage_04_train]:  >>>>> Stage fout started
+[2022-07-20 17:15:18,356:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 17:15:18,357:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 17:15:18,357:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 17:15:19,331:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 17:15:19,332:  INFO: models]:  Model loaded successfully
+[2022-07-20 17:15:19,333:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
+[2022-07-20 17:17:22,780:  INFO: stage_04_train]:  >>>>> Stage fout started
+[2022-07-20 17:17:22,785:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 17:17:22,787:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 17:17:22,787:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 17:17:23,786:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 17:17:23,787:  INFO: models]:  Model loaded successfully
+[2022-07-20 17:17:23,789:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-20 17:17:23,789:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
+[2022-07-20 17:18:02,510:  INFO: stage_04_train]:  >>>>> Stage fout started
+[2022-07-20 17:18:02,515:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 17:18:02,517:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 17:18:02,518:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 17:18:03,527:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 17:18:03,528:  INFO: models]:  Model loaded successfully
+[2022-07-20 17:18:03,529:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-20 17:18:03,530:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved
+
+>>>>>
+[2022-07-20 17:18:30,536:  INFO: stage_04_train]:  >>>>> Stage fout started
+[2022-07-20 17:18:30,541:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 17:18:30,544:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 17:18:30,545:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 17:18:31,529:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 17:18:31,530:  INFO: models]:  Model loaded successfully
+[2022-07-20 17:18:31,531:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-20 17:18:31,532:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
+
+

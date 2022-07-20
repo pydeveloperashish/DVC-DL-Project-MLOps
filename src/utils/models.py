@@ -42,3 +42,10 @@ def prepare_model(model, CLASSES, freeze_all, freeze_till, learning_rate):
     logging.info("Custom model is compiled and ready for training.")
     
     return model
+
+
+def load_full_model(untrained_full_model_path):
+    model = tf.keras.models.load_model(untrained_full_model_path)
+    logging.info("Model loaded successfully")
+    return model
+    
