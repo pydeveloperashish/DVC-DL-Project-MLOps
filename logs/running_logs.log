@@ -715,3 +715,69 @@ _________________________________________________________________
 
 [2022-07-19 20:25:14,793:  WARNING: saving_utils]:  Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
 [2022-07-19 20:25:15,362:  INFO: stage_02_prepare_base_model]:  Stage two completed! Base model is created >>>>>
+[2022-07-20 15:45:25,838:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 15:45:25,844:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 15:45:25,846:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 15:45:25,847:  ERROR: stage_03_prepare_callbacks]:  create_directory() takes 1 positional argument but 3 were given
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callbacks.py", line 50, in <module>
+    params_path = parsed_args.params)
+  File "src/stage_03_prepare_callbacks.py", line 34, in prepare_callbacks
+    callbacks_dir
+TypeError: create_directory() takes 1 positional argument but 3 were given
+[2022-07-20 15:46:07,676:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 15:46:07,681:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 15:46:07,683:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 15:46:07,683:  INFO: all_utils]:  Directory is created at artifacts/tensorboard_log_dir
+[2022-07-20 15:46:07,684:  INFO: all_utils]:  Directory is created at artifacts/checkpoints
+[2022-07-20 15:46:07,684:  INFO: all_utils]:  Directory is created at artifacts/callbacks
+[2022-07-20 15:46:07,684:  ERROR: stage_03_prepare_callbacks]:  module 'keras.api._v2.keras.callbacks' has no attribute 'Tensorboard'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callbacks.py", line 50, in <module>
+    params_path = parsed_args.params)
+  File "src/stage_03_prepare_callbacks.py", line 37, in prepare_callbacks
+    create_and_save_tensorboard_callback(callbacks_dir, tensorflow_log_dir)
+  File "/media/dev_ashish/DATA/Python37/INeuron-Classes/ML-OPS-Classes/DVC-Classes/DVC-DL-Project/src/utils/callbacks.py", line 11, in create_and_save_tensorboard_callback
+    tensorboard_callback =  tf.keras.callbacks.Tensorboard(
+AttributeError: module 'keras.api._v2.keras.callbacks' has no attribute 'Tensorboard'
+[2022-07-20 16:00:46,304:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 16:00:46,307:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 16:00:46,310:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 16:00:46,311:  INFO: all_utils]:  Directory is created at artifacts/tensorboard_log_dir
+[2022-07-20 16:00:46,311:  INFO: all_utils]:  Directory is created at artifacts/checkpoints
+[2022-07-20 16:00:46,311:  INFO: all_utils]:  Directory is created at artifacts/callbacks
+[2022-07-20 16:00:46,312:  INFO: callbacks]:  tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-07-20 16:00:46,313:  ERROR: stage_03_prepare_callbacks]:  name 'checkpoint_file_path' is not defined
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callbacks.py", line 50, in <module>
+    params_path = parsed_args.params)
+  File "src/stage_03_prepare_callbacks.py", line 38, in prepare_callbacks
+    create_and_save_checkpoint_callback(callbacks_dir, checkpoint_dir)
+  File "/media/dev_ashish/DATA/Python37/INeuron-Classes/ML-OPS-Classes/DVC-Classes/DVC-DL-Project/src/utils/callbacks.py", line 22, in create_and_save_checkpoint_callback
+    file_path = checkpoint_file_path,
+NameError: name 'checkpoint_file_path' is not defined
+[2022-07-20 16:01:48,243:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 16:01:48,248:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 16:01:48,251:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 16:01:48,252:  INFO: all_utils]:  Directory is created at artifacts/tensorboard_log_dir
+[2022-07-20 16:01:48,252:  INFO: all_utils]:  Directory is created at artifacts/checkpoints
+[2022-07-20 16:01:48,253:  INFO: all_utils]:  Directory is created at artifacts/callbacks
+[2022-07-20 16:01:48,254:  INFO: callbacks]:  tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-07-20 16:01:48,254:  ERROR: stage_03_prepare_callbacks]:  __init__() missing 1 required positional argument: 'filepath'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callbacks.py", line 50, in <module>
+    params_path = parsed_args.params)
+  File "src/stage_03_prepare_callbacks.py", line 38, in prepare_callbacks
+    create_and_save_checkpoint_callback(callbacks_dir, checkpoint_dir)
+  File "/media/dev_ashish/DATA/Python37/INeuron-Classes/ML-OPS-Classes/DVC-Classes/DVC-DL-Project/src/utils/callbacks.py", line 23, in create_and_save_checkpoint_callback
+    save_best_only = True
+TypeError: __init__() missing 1 required positional argument: 'filepath'
+[2022-07-20 16:06:38,244:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 16:06:38,246:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 16:06:38,250:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 16:06:38,250:  INFO: all_utils]:  Directory is created at artifacts/tensorboard_log_dir
+[2022-07-20 16:06:38,251:  INFO: all_utils]:  Directory is created at artifacts/checkpoints
+[2022-07-20 16:06:38,251:  INFO: all_utils]:  Directory is created at artifacts/callbacks
+[2022-07-20 16:06:38,252:  INFO: callbacks]:  tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-07-20 16:06:38,260:  INFO: callbacks]:  model checkpoint is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-07-20 16:06:38,261:  INFO: stage_03_prepare_callbacks]:  Stage three completed: Callbacks are preared and saved as binary >>>>>

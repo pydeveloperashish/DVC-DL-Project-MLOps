@@ -1,7 +1,7 @@
 from src.utils.all_utils import create_directory, read_yaml, copy_file
 from src.utils.models import get_VGG16_model
-from src.utils.callbacks import create_and_save_tensorboard_callback, 
-create_and_save_checkpoint_callback
+from src.utils.callbacks import create_and_save_checkpoint_callback, create_and_save_tensorboard_callback
+
 import argparse
 import os
 from pprint import pprint
@@ -29,9 +29,9 @@ def prepare_callbacks(config_path, params_path):
     callbacks_dir = os.path.join(artifacts_dir, artifacts['Callbacks_dir'])
     
     create_directory(
-        tensorflow_log_dir,
+        [tensorflow_log_dir,
         checkpoint_dir,
-        callbacks_dir
+        callbacks_dir]
     )
     
     create_and_save_tensorboard_callback(callbacks_dir, tensorflow_log_dir)
