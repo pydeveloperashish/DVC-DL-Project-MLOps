@@ -1,5 +1,4 @@
 from src.utils.all_utils import create_directory, read_yaml, copy_file
-from src.utils.models import get_VGG16_model
 from src.utils.callbacks import create_and_save_checkpoint_callback, create_and_save_tensorboard_callback
 
 import argparse

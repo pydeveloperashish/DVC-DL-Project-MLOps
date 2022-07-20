@@ -1093,3 +1093,192 @@ NameError: name 'scipy' is not defined
 [2022-07-20 20:40:20,135:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
 [2022-07-20 20:40:20,462:  INFO: data_management]:  Data augmentation is used for training
 [2022-07-20 20:40:21,250:  INFO: data_management]:  train and valid generator is created
+[2022-07-20 21:03:17,492:  INFO: stage_04_train]:  >>>>> Stage four started
+[2022-07-20 21:03:17,497:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:03:17,500:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 21:03:17,500:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 21:03:18,585:  INFO: models]:  Model loaded successfully
+[2022-07-20 21:03:18,586:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-20 21:03:18,906:  INFO: data_management]:  Data augmentation is used for training
+[2022-07-20 21:03:19,575:  INFO: data_management]:  train and valid generator is created
+[2022-07-20 21:13:22,551:  INFO: stage_01_load_save]:  >>>>> Stage one started
+[2022-07-20 21:13:22,559:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:13:22,587:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:13:22,588:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:31:28,156:  INFO: stage_02_prepare_base_model]:  >>>>> Stage two started
+[2022-07-20 21:31:28,164:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:31:28,167:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 21:31:28,168:  INFO: all_utils]:  Directory is created at artifacts/base_model
+[2022-07-20 21:31:29,275:  WARNING: saving_utils]:  Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-07-20 21:31:30,813:  INFO: models]:  VGG16 base model saved at: artifacts/base_model/VGG16_base_model.h5
+[2022-07-20 21:31:30,847:  INFO: models]:  Custom model is compiled and ready for training.
+[2022-07-20 21:31:30,850:  INFO: stage_02_prepare_base_model]:   full model summary: 
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 224, 224, 3)]     0         
+                                                                 
+ block1_conv1 (Conv2D)       (None, 224, 224, 64)      1792      
+                                                                 
+ block1_conv2 (Conv2D)       (None, 224, 224, 64)      36928     
+                                                                 
+ block1_pool (MaxPooling2D)  (None, 112, 112, 64)      0         
+                                                                 
+ block2_conv1 (Conv2D)       (None, 112, 112, 128)     73856     
+                                                                 
+ block2_conv2 (Conv2D)       (None, 112, 112, 128)     147584    
+                                                                 
+ block2_pool (MaxPooling2D)  (None, 56, 56, 128)       0         
+                                                                 
+ block3_conv1 (Conv2D)       (None, 56, 56, 256)       295168    
+                                                                 
+ block3_conv2 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_conv3 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_pool (MaxPooling2D)  (None, 28, 28, 256)       0         
+                                                                 
+ block4_conv1 (Conv2D)       (None, 28, 28, 512)       1180160   
+                                                                 
+ block4_conv2 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_conv3 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_pool (MaxPooling2D)  (None, 14, 14, 512)       0         
+                                                                 
+ block5_conv1 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv2 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv3 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_pool (MaxPooling2D)  (None, 7, 7, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 2)                 50178     
+                                                                 
+=================================================================
+Total params: 14,764,866
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
+_________________________________________________________________
+
+[2022-07-20 21:31:32,134:  INFO: stage_02_prepare_base_model]:  Stage two completed! Base model is created >>>>>
+[2022-07-20 21:32:35,579:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 21:32:35,585:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:32:35,588:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 21:32:35,588:  INFO: all_utils]:  Directory is created at artifacts/tensorboard_log_dir
+[2022-07-20 21:32:35,589:  INFO: all_utils]:  Directory is created at artifacts/checkpoints
+[2022-07-20 21:32:35,589:  INFO: all_utils]:  Directory is created at artifacts/callbacks
+[2022-07-20 21:32:35,590:  INFO: callbacks]:  tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-07-20 21:32:35,593:  INFO: callbacks]:  model checkpoint is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-07-20 21:32:35,594:  INFO: stage_03_prepare_callbacks]:  Stage three completed: Callbacks are preared and saved as binary >>>>>
+[2022-07-20 21:34:12,604:  INFO: stage_02_prepare_base_model]:  >>>>> Stage two started
+[2022-07-20 21:34:12,611:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:34:12,612:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 21:34:12,613:  INFO: all_utils]:  Directory is created at artifacts/base_model
+[2022-07-20 21:34:13,694:  WARNING: saving_utils]:  Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-07-20 21:34:14,589:  INFO: models]:  VGG16 base model saved at: artifacts/base_model/VGG16_base_model.h5
+[2022-07-20 21:34:14,624:  INFO: models]:  Custom model is compiled and ready for training.
+[2022-07-20 21:34:14,627:  INFO: stage_02_prepare_base_model]:   full model summary: 
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 224, 224, 3)]     0         
+                                                                 
+ block1_conv1 (Conv2D)       (None, 224, 224, 64)      1792      
+                                                                 
+ block1_conv2 (Conv2D)       (None, 224, 224, 64)      36928     
+                                                                 
+ block1_pool (MaxPooling2D)  (None, 112, 112, 64)      0         
+                                                                 
+ block2_conv1 (Conv2D)       (None, 112, 112, 128)     73856     
+                                                                 
+ block2_conv2 (Conv2D)       (None, 112, 112, 128)     147584    
+                                                                 
+ block2_pool (MaxPooling2D)  (None, 56, 56, 128)       0         
+                                                                 
+ block3_conv1 (Conv2D)       (None, 56, 56, 256)       295168    
+                                                                 
+ block3_conv2 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_conv3 (Conv2D)       (None, 56, 56, 256)       590080    
+                                                                 
+ block3_pool (MaxPooling2D)  (None, 28, 28, 256)       0         
+                                                                 
+ block4_conv1 (Conv2D)       (None, 28, 28, 512)       1180160   
+                                                                 
+ block4_conv2 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_conv3 (Conv2D)       (None, 28, 28, 512)       2359808   
+                                                                 
+ block4_pool (MaxPooling2D)  (None, 14, 14, 512)       0         
+                                                                 
+ block5_conv1 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv2 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_conv3 (Conv2D)       (None, 14, 14, 512)       2359808   
+                                                                 
+ block5_pool (MaxPooling2D)  (None, 7, 7, 512)         0         
+                                                                 
+ flatten (Flatten)           (None, 25088)             0         
+                                                                 
+ dense (Dense)               (None, 2)                 50178     
+                                                                 
+=================================================================
+Total params: 14,764,866
+Trainable params: 2,409,986
+Non-trainable params: 12,354,880
+_________________________________________________________________
+
+[2022-07-20 21:34:15,341:  INFO: stage_02_prepare_base_model]:  Stage two completed! Base model is created >>>>>
+[2022-07-20 21:34:20,267:  INFO: stage_01_load_save]:  >>>>> Stage one started
+[2022-07-20 21:34:20,273:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:34:20,311:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:34:20,312:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:34:39,400:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:34:39,400:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:34:58,317:  INFO: stage_01_load_save]:  Stage one completed all the data are saved in local >>>>>
+[2022-07-20 21:36:02,847:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 21:36:02,853:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:36:02,857:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 21:36:02,858:  INFO: all_utils]:  Directory is created at artifacts/tensorboard_log_dir
+[2022-07-20 21:36:02,859:  INFO: all_utils]:  Directory is created at artifacts/checkpoints
+[2022-07-20 21:36:02,859:  INFO: all_utils]:  Directory is created at artifacts/callbacks
+[2022-07-20 21:36:02,860:  INFO: callbacks]:  tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-07-20 21:36:02,865:  INFO: callbacks]:  model checkpoint is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-07-20 21:36:02,866:  INFO: stage_03_prepare_callbacks]:  Stage three completed: Callbacks are preared and saved as binary >>>>>
+[2022-07-20 21:36:46,499:  INFO: stage_01_load_save]:  >>>>> Stage one started
+[2022-07-20 21:36:46,502:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:36:46,533:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:36:46,533:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:37:05,783:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:37:05,783:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:37:24,216:  INFO: stage_01_load_save]:  Stage one completed all the data are saved in local >>>>>
+[2022-07-20 21:38:03,636:  INFO: stage_01_load_save]:  >>>>> Stage one started
+[2022-07-20 21:38:03,642:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:38:03,678:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:38:03,678:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:38:23,671:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:38:23,671:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:38:40,056:  INFO: stage_01_load_save]:  Stage one completed all the data are saved in local >>>>>
+[2022-07-20 21:58:51,642:  INFO: stage_01_load_save]:  >>>>> Stage one started
+[2022-07-20 21:58:51,647:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 21:58:51,677:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:58:51,678:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:59:13,067:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-20 21:59:13,068:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-20 21:59:30,862:  INFO: stage_01_load_save]:  Stage one completed all the data are saved in local >>>>>
+[2022-07-20 22:12:08,586:  INFO: stage_03_prepare_callbacks]:  >>>>> Stage three started
+[2022-07-20 22:12:08,593:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 22:12:08,597:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 22:12:08,598:  INFO: all_utils]:  Directory is created at artifacts/tensorboard_log_dir
+[2022-07-20 22:12:08,598:  INFO: all_utils]:  Directory is created at artifacts/checkpoints
+[2022-07-20 22:12:08,598:  INFO: all_utils]:  Directory is created at artifacts/callbacks
+[2022-07-20 22:12:08,599:  INFO: callbacks]:  tensorboard callback is being saved at artifacts/callbacks/tensorboard_cb.cb
+[2022-07-20 22:12:08,603:  INFO: callbacks]:  model checkpoint is being saved at artifacts/callbacks/checkpoint_cb.cb
+[2022-07-20 22:12:08,603:  INFO: stage_03_prepare_callbacks]:  Stage three completed: Callbacks are preared and saved as binary >>>>>
