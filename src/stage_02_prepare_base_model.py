@@ -63,6 +63,7 @@ if __name__ == "__main__":
     args.add_argument("--config", "-c", default = "config/config.yaml")
     args.add_argument("--params", "-p", default = "params.yaml")
     parsed_args = args.parse_args()
+    
     try:
         logging.info(">>>>> Stage two started")
         prepare_base_model(config_path = parsed_args.config, 
