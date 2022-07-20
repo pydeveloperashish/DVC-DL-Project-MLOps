@@ -1,5 +1,5 @@
 from src.utils.all_utils import create_directory, read_yaml, copy_file
-from src.utils.models import load_full_model
+from src.utils.models import load_full_model, get_unique_path_to_save_model
 from src.utils.callbacks import get_callbacks
 import argparse
 import os
@@ -53,6 +53,17 @@ def train_model(config_path, params_path):
         validation_steps = validation_steps,
         callbacks = callbacks
     )
+    
+    logging.info("Training Completed !!!!!")
+    
+    trained_model_dir = os.path.join(artifacts_dir, artifacts['Trained_Model_Dir'])
+    create_directory([trained_model_dir])
+    
+    model_file_path = get_unique_path_to_save_model(trained_model_dir)
+    model.save(model_file_path)
+    
+    logging.info(f"Trained model is saved  at: {model_file_path}")
+                                     
                         
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
