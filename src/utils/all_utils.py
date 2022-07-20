@@ -5,6 +5,7 @@ import json
 from tqdm import tqdm
 import shutil
 import logging
+import time
 
 
 
@@ -39,3 +40,9 @@ def copy_file(source_download_dir, local_data_dir):
         src = os.path.join(source_download_dir, file)
         dest = os.path.join(local_data_dir, file)
         shutil.copy(src, dest) 
+        
+        
+def get_timestamp(name):
+    timestamp = time.asctime().replace("", "_").replace(":", "_")
+    unique_name = f"{name}_at_{timestamp}"
+    return unique_name
