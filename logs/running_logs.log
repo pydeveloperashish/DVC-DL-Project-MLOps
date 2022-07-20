@@ -846,3 +846,31 @@ NameError: name 'model' is not defined
 [2022-07-20 17:18:31,532:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
 
 
+[2022-07-20 18:03:31,727:  INFO: stage_04_train]:  >>>>> Stage four started
+[2022-07-20 18:03:31,735:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 18:03:31,739:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 18:03:31,739:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 18:03:32,757:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 18:03:32,757:  INFO: models]:  Model loaded successfully
+[2022-07-20 18:03:32,759:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-20 18:03:32,760:  ERROR: stage_04_train]:  module 'tensorflow._api.v2.train' has no attribute 'preprocessing'
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 54, in <module>
+    params_path = parsed_args.params)
+  File "src/stage_04_train.py", line 41, in train_model
+    do_data_augmentation = params["AUGMENTATION"]
+  File "/media/dev_ashish/DATA/Python37/INeuron-Classes/ML-OPS-Classes/DVC-Classes/DVC-DL-Project/src/utils/data_management.py", line 17, in train_valid_generator
+    valid_datagenerator = tf.train.preprocessing.image.ImageDataGenerator(**datagenerator_kwargs)
+AttributeError: module 'tensorflow._api.v2.train' has no attribute 'preprocessing'
+[2022-07-20 18:04:43,866:  INFO: stage_04_train]:  >>>>> Stage four started
+[2022-07-20 18:04:43,872:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-20 18:04:43,875:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-20 18:04:43,876:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-20 18:04:44,926:  WARNING: hdf5_format]:  No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+[2022-07-20 18:04:44,927:  INFO: models]:  Model loaded successfully
+[2022-07-20 18:04:44,928:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-20 18:04:45,257:  INFO: data_management]:  Data augmentation is used for training
+[2022-07-20 18:04:46,047:  INFO: data_management]:  train and valid generator is created
+[2022-07-20 18:04:46,047:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
+
+
