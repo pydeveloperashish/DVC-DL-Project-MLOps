@@ -1392,3 +1392,38 @@ _________________________________________________________________
 [2022-07-20 23:19:56,849:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
 
 
+[2022-07-21 00:06:43,805:  INFO: stage_01_load_save]:  >>>>> Stage one started
+[2022-07-21 00:06:43,809:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-21 00:06:43,844:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-21 00:06:43,844:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-21 00:06:44,162:  INFO: all_utils]:  Directory is created at data/Dog
+[2022-07-21 00:06:44,162:  INFO: all_utils]:  Directory is created at data/Cat
+[2022-07-21 00:06:44,456:  INFO: stage_01_load_save]:  Stage one completed all the data are saved in local >>>>>
+[2022-07-21 00:07:10,845:  INFO: stage_04_train]:  >>>>> Stage four started
+[2022-07-21 00:07:10,851:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-21 00:07:10,853:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-21 00:07:10,854:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-21 00:07:11,891:  INFO: models]:  Model loaded successfully
+[2022-07-21 00:07:11,892:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-21 00:07:11,995:  INFO: data_management]:  Data augmentation is used for training
+[2022-07-21 00:07:12,099:  INFO: data_management]:  train and valid generator is created
+[2022-07-21 00:08:33,902:  INFO: stage_04_train]:  Training Completed !!!!!
+[2022-07-21 00:08:33,903:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-21 00:08:34,768:  INFO: stage_04_train]:  Trained model is saved  at: artifacts/model/model_at__T_h_u_ _J_u_l_ _2_1_ _0_0___0_8___3_3_ _2_0_2_2__.h5
+[2022-07-21 00:08:34,769:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
+
+
+[2022-07-21 00:09:44,485:  INFO: stage_04_train]:  >>>>> Stage four started
+[2022-07-21 00:09:44,490:  INFO: all_utils]:  yaml file: config/config.yaml loaded successfully
+[2022-07-21 00:09:44,494:  INFO: all_utils]:  yaml file: params.yaml loaded successfully
+[2022-07-21 00:09:44,495:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-21 00:09:45,613:  INFO: models]:  Model loaded successfully
+[2022-07-21 00:09:45,615:  INFO: callbacks]:  saved callbacks are loaded from artifacts/callbacks
+[2022-07-21 00:09:45,718:  INFO: data_management]:  Data augmentation is used for training
+[2022-07-21 00:09:45,822:  INFO: data_management]:  train and valid generator is created
+[2022-07-21 00:11:07,954:  INFO: stage_04_train]:  Training Completed !!!!!
+[2022-07-21 00:11:07,955:  INFO: all_utils]:  Directory is created at artifacts/model
+[2022-07-21 00:11:08,825:  INFO: stage_04_train]:  Trained model is saved  at: artifacts/model/model_at__T_h_u_ _J_u_l_ _2_1_ _0_0___1_1___0_7_ _2_0_2_2__.h5
+[2022-07-21 00:11:08,825:  INFO: stage_04_train]:  Stage four completed: training completed and model is saved >>>>>
+
+
